@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+.background{
+  background: #dddddd;
+}
+.boxBackground{
+  background: #eeeeee;
+}
+
+.flex-grow{
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 0;
+}
+
+.gap-10{
+  gap:10px;
+}
