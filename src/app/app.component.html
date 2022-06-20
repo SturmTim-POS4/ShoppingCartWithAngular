@@ -24,21 +24,21 @@
 
     <div class="row">
       <div class="col"></div>
-      <button class="btn btn-warning col flex-grow-0" (click)="addOrder()">Add</button>
+      <button class="btn btn-success col flex-grow-0" (click)="addOrder()">Add</button>
     </div>
   </div>
   <div class="col p-4">
     <div class="row">
       <div class="col">Summe:</div>
-      <div class="col">{{selectedProduct.price}}€</div>
+      <div class="col">{{sum}}€</div>
     </div>
     <div class="row">
       <div class="col">Nachlass:</div>
-      <div class="col">{{selectedProduct.price}}€</div>
+      <div class="col">{{discount}}€</div>
     </div>
     <div class="row">
       <div class="col">Gesamt:</div>
-      <div class="col">{{selectedProduct.price}}€</div>
+      <div class="col">{{sum-discount}}€</div>
     </div>
   </div>
 </div>
@@ -56,13 +56,13 @@
     </thead>
     <tbody>
     <tr *ngFor="let order of orders">
-      <th scope="row">{{orders.indexOf(order)}}</th>
+      <th scope="row">{{orders.indexOf(order)+1}}</th>
       <td>{{order.quantity}}</td>
       <td>{{order.product.productName}}</td>
       <td>{{order.product.price}}</td>
       <td>{{order.fullPrice}}</td>
       <td>
-        <button class="btn btn-warning"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+        <button class="btn btn-danger" (click)="deleteOrder(order)">Delete</button>
       </td>
     </tr>
     </tbody>
